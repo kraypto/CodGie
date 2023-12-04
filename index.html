@@ -1,0 +1,305 @@
+<! DOCTYPE html>
+<html lang="en">
+<head
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge ">
+      <meta name= "viewport" content="width=device-width, initial - scale=1.0">
+      <title>Personal Webpage</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/c160098e4b.js" crossorigin="anonymous"></script>
+</head>
+<body
+<div id="header">
+   <div class="container">
+      <nav>
+          <img src="images/logo.png" class="logo">
+          <ul id="sidemenu"> 
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+          <p>UI/UX Designer</p>
+          <h1>Hi, <span>Cogie and Codrey </span><br>here from, Philippines</h1>
+       </div>
+   </div>
+</div>
+
+
+<!-----------------about codrey--------------------->
+<div class="about" id="about">
+   <div class="container">
+      <div class="row">
+         <div class="about-col-1">
+            <img src="images/YM2.png">
+         </div>
+         <div class="about-col-2">
+            <h1 class="sub-title">About Codrey</h1>
+            <p>Hello, I'm Codrey! Currently 20 years old. 
+               I'm pursuing a BSIT degree at Bulacan State University, embarking on my third year. 
+               Proudly hailing from Marilao, Bulacan, I'm passionate about technology and eager to explore its vast realms.</p>
+
+               <div class="tab-titles">
+                  <p class="tab-links active-link" onclick="openTab('skills', 'about')">Skills</p>
+                  <p class="tab-links" onclick="openTab('experience', 'about')">Experience</p>
+                  <p class="tab-links" onclick="openTab('education', 'about')">Education</p>
+               </div>
+               <div class="tab-contents active-tab" id="skills-about">
+                     <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Dev</span><br>Web Development</li>
+                        <li><span>App Dev</span><br>Building android Applications</li>
+                     </ul>
+                  </div>
+                  <div class="tab-contents" id="experience-about">
+                     <ul>
+                        <li><span>2020-2021</span><br>Training 1</li>
+                        <li><span>2022-2023</span><br>Microsoft Training</li>
+                        <li><span>2023-2024</span><br>Salesforce Training</li>
+                     </ul>
+                  </div>
+                  <div class="tab-contents" id="education-about">
+                     <ul>
+                        <li><span>2015</span><br>Lias Elementary School, Marilao, Bulacan</li>
+                        <li><span>2021</span><br>AFG. Memorial Trade School, Marilao, Bulacan</li>
+                        <li><span>2023-Current</span><br>Bulacan State University Bachelor of Science in Information Technology</li>
+                     </ul>
+                  </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-----------------about cogie--------------------->
+<div class="about" id="aboutcog">
+   <div class="container">
+      <div class="row">
+         <div class="about-col-1">
+            <img src="images/cg.png">
+         </div>
+         <div class="about-col-2">
+            <h1 class="sub-title">About Cogie</h1>
+            <p>
+               Hey there, I'm Cogie! I'm 20 and knee-deep into my BSIT degree at Bulacan State University, 
+               hitting that third-year stride. Malolos, Bulacan is my stomping ground, 
+               and tech's my jam—I'm all about diving into its endless possibilities.
+               </p>
+
+               <div class="tab-titles">
+                  <p class="tab-links active-link" onclick="openTab('skills', 'aboutcog')">Skills</p>
+                  <p class="tab-links" onclick="openTab('experience', 'aboutcog')">Experience</p>
+                  <p class="tab-links" onclick="openTab('education', 'aboutcog')">Education</p>
+               </div>
+               <div class="tab-contents active-tab" id="skills-aboutcog">
+                     <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Dev</span><br>Web Development</li>
+                        <li><span>App Dev</span><br>Building android Applications</li>
+                     </ul>
+                  </div>
+                  <div class="tab-contents" id="experience-aboutcog">
+                     <ul>
+                        <li><span>2020-2021</span><br>Training 1</li>
+                        <li><span>2022-2023</span><br>Microsoft Training</li>
+                        <li><span>2023-2024</span><br>Salesforce Training</li>
+                     </ul>
+                  </div>
+                  <div class="tab-contents" id="education-aboutcog">
+                     <ul>
+                        <li><span>2015</span><br>Canalate Elementary School, Malolos, Bulacan</li>
+                        <li><span>2021</span><br>Paombong High School Inc. Paombong, Bulacan</li>
+                        <li><span>2023-Current</span><br>Bulacan State University Bachelor of Science in Information Technology</li>
+                     </ul>
+                  </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script>
+   function openTab(tabName, sectionId) {
+     const tabs = document.querySelectorAll(`#${sectionId} .tab-contents`);
+     const links = document.querySelectorAll(`#${sectionId} .tab-links`);
+     
+     tabs.forEach(tab => {
+       if (tab.id === `${tabName}-${sectionId}`) {
+         tab.style.display = 'block';
+         tab.classList.add('active-tab');
+       } else {
+         tab.style.display = 'none';
+         tab.classList.remove('active-tab');
+       }
+     });
+     
+     links.forEach(link => {
+       if (link.textContent.toLowerCase() === tabName.toLowerCase()) {
+         link.classList.add('active-link');
+       } else {
+         link.classList.remove('active-link');
+       }
+     });
+   }
+ </script>
+ 
+<!-----------------services--------------------->
+<div id="services">
+   <div class="container">
+      <h1 class="sub-title">Our Services</h1>
+      <div class="services-list">
+         <div>
+            <i class="fa-solid fa-desktop"></i>
+            <h2>Web Design</h2>
+            <p>Web development involves creating and maintaining websites or web applications. 
+               It encompasses various disciplines, including coding languages like HTML, CSS, and JavaScript, along with frameworks and tools, to design, build, 
+               and deploy functional and visually engaging online platforms accessible across different devices.</p>
+            <a href="#">Learn more</a>   
+         </div>
+         <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>focuses on crafting intuitive and visually appealing user interfaces and experiences for digital products. 
+               It involves understanding user behavior, employing design principles, and creating interfaces that seamlessly guide users through a product, 
+               enhancing satisfaction and usability.</p>
+            <a href="#">Learn more</a>   
+         </div>
+         <div>
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h2>App Design</h2>
+            <p>involves conceptualizing, planning, and creating software applications for various platforms, such as desktop, mobile, or web. 
+               It includes defining functionalities, structuring user interfaces, and ensuring seamless user experiences. 
+               Application designers combine user needs, technical feasibility, and design aesthetics to develop efficient and user-friendly software solutions.</p>
+            <a href="#">Learn more</a>   
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-----------------portfolio--------------------->
+<div id="portfolio">
+   <div class="container">
+      <h1 class="sub-title">Our Work</h1>
+      <div class="work-list">
+         <div class="work">
+            <img src="images/work.png">
+            <div class="layer">
+               <h3>Website Design</h3>
+               <p>Amazing website for amazing people brought,
+                  to you by Codrey and Cogie.</p>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+         </div>
+         <div class="work">
+            <img src="images/work2.png">
+            <div class="layer">
+               <h3>UI/UX Design</h3>
+               <p>Amazing website for amazing people brought 
+                  to you by Codrey and Cogie.</p>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+         </div>
+         <div class="work">
+            <img src="images/work3.png">
+            <div class="layer">
+               <h3>Application Design</h3>
+               <p>Amazing website for amazing people brought 
+                  to you by Codrey and Cogie.</p>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+         </div>
+      </div>
+      <a href="#" class="btn">See more</a>
+   </div>
+</div>
+
+<!-----------------contact--------------------->
+<div id="contact">
+   <div class="cotaniner">
+       <div class="row">
+         <div class="contact-left">
+            <h1 class="sub-title">Contact Us</h1>
+            <p><i class="fa-solid fa-envelope"></i>CodGie@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>097-303-1945</p>
+            <div class="social-icons">
+               <a href="https://www.facebook.com/cdrxking/"><i class="fa-brands fa-facebook"></i></a>
+               <a href="https://t.me/BeanDegens"><i class="fa-brands fa-telegram"></i></a>
+               <a href="https://twitter.com/kraypto1"><i class="fa-brands fa-twitter"></i></a>
+               <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="images/Codrey_Cogie_CV.pdf" download class="btn btn2">Download CV</a>
+         </div>
+         <div class="contact-right">
+            <form name="submit-to-google-sheet">
+               <input type="text" name="Name" placeholder="Your Name" required>
+               <input type="email" name="Email" placeholder="Your Email" required>
+               <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+               <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+         </div>
+       </div>
+   </div>
+   <div class="copyright">
+      <p>Copyright  © CodGie 2023. TO THE MOON <i class="fa-solid fa-moon"></i></p>
+   </div>
+</div>
+
+
+<script>
+
+   var tablinks = document.getElementsByClassName("tab-links");
+   var tabcontents = document.getElementsByClassName("tab-contents");
+
+   function opentab(tabname){
+      for(tablink of tablinks){
+         tablink.classList.remove("active-link")
+      }
+      for(tabcontent of tabcontents){
+         tabcontent.classList.remove("active-tab")
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+   }
+
+
+</script>
+
+<script>
+
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+         sidemenu.style.right = "0";
+      }
+      function closemenu(){
+         sidemenu.style.right = "-200px";
+      }
+
+</script>
+
+<script>
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbzkZ7fc1ppYGe-AtDxhTVQccpBOXYsuY7Xu9Ky7k7mAf-3jQ4SKBmtnFYDu2bCKStK0/exec'
+   const form = document.forms['submit-to-google-sheet']
+   const msg = document.getElementById("msg")
+
+   form.addEventListener('submit', e => {
+     e.preventDefault()
+     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+       .then(response => {
+         msg.innerHTML = "Message Sent Successfully"
+         setTimeout(function(){
+            msg.innerHTML = ""
+         },5000)
+         form.reset()
+       })
+       .catch(error => console.error('Error!', error.message))
+   })
+ </script>
+
+
+</body>
+</html>
